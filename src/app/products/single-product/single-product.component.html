@@ -1,0 +1,22 @@
+<div class="card mb-3 border-primary" style="max-width: 100%;">
+  <div class="row no-gutters">
+    <div class="col-md-3">
+      <img [src]="product.image" style="height: 40vh;" class="card-img" alt="..." >
+    </div>
+    <div class="col-md-9" >
+      <div class="card-body" style="height: 100%;" [style.background]="product.promotionFlag ? 'lightsteelblue':'aliceblue'">
+        <h5 class="card-title" >{{product.title}}
+        <button class=" btn-dark" (click)="toggleDesc()"><i [ngClass] ="toggleFlag ? 'far fa-caret-square-up' :'far fa-caret-square-down'"></i></button>
+      </h5>
+        <span></span>
+        <p class="card-text" *ngIf="toggleFlag">{{product.description}}</p>
+        <p class="card-text">{{product.price | currency:'USD'}}</p>
+        <div>
+          <app-counter></app-counter>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+

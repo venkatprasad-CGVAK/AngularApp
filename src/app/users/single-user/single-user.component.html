@@ -1,0 +1,22 @@
+<div>
+  <div class="card mb-3" >
+    <div class="row no-gutters">
+        <div class="col-sm-3">
+            <img class="card-img" [src]="user.gender === 'male'?'../../../assets/images/icon-men.webp':'../../../assets/images/icon-women.webp'" alt="Profile Image" >
+        </div>
+        <div class="col-sm-9">
+            <div class="card-body">
+                <h5 class="card-title">{{user.name.firstname | uppercase}} {{user.name.lastname | uppercase}}
+                  <button class=" btn-dark" (click)="toggleDesc()"><i [ngClass] ="toggleFlag ? 'far fa-caret-square-up' :'far fa-caret-square-down'"></i></button>
+                </h5>
+                <ul *ngIf="toggleFlag" style="list-style: none;">
+                  <li><i class="fa fa-envelope"></i>&emsp;{{user.email}}</li>
+                  <li><i class="fa fa-mobile-alt"></i>&emsp;&nbsp;{{user.phone}}</li>
+                  <li><i class="fa fa-map-marker-alt"></i>&emsp;&nbsp;{{user.address.city}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
