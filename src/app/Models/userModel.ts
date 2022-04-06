@@ -20,7 +20,7 @@ export interface User{
     lastname: string;
   };
   gender:string;
-  phone: number;
+  phone: string;
   __v: number;
 
 }

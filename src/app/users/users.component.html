@@ -4,7 +4,7 @@
  <div class="row">
    <div class="col-2">
      <button type="button" class="btn btn-primary float-end m-2"
- data-bs-toggle="modal" data-bs-target="#exampleModal">Add User</button>
+ data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="showForm = !showForm">Add User</button>
    </div>
  </div>
 
@@ -20,14 +20,15 @@
          </button>
        </div>
        <div class="modal-body">
-         <app-add-user></app-add-user>
+        <app-add-user (addUser)="addUser($event)" ></app-add-user>
        </div>
      </div>
    </div>
  </div>
  </div>
      <div class="row">
-      <app-single-user [user]="user" *ngFor="let user of usersList" ></app-single-user>
+       <app-single-user [user]="user" *ngFor="let user of usersList" ></app-single-user>
+
 
 
      </div>

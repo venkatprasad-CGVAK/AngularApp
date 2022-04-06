@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { productModel } from '../Models/productModel';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -8,11 +9,11 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductsComponent implements OnInit {
 
-  productList:any=[];
+  productList:any[]=[];
   constructor(private productService:ProductService) { }
 
   ngOnInit() {
-    this.productList = this.productService.getProducts();
+    //this.productList = this.productService.getProducts();
   }
 
 
@@ -21,5 +22,9 @@ export class ProductsComponent implements OnInit {
 
   toggleDesc(){
     this.toggleFlag = !this.toggleFlag
+  }
+
+  addProduct(product:productModel){
+    this.productList.push(product);
   }
 }

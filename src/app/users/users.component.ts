@@ -8,12 +8,16 @@ import { User } from '../Models/userModel';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  usersList:any=[];
+  usersList:any[]=[];
+
+  showForm = false;
   constructor(private userService:UserService) { }
 
   ngOnInit() {
-    this.usersList = this.userService.getUsers()
+    //this.usersList = this.userService.getUsers()
   }
 
-
+  addUser(user:User){
+    this.usersList.push(user);
+  }
   }
