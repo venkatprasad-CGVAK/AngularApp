@@ -11,6 +11,9 @@ import { SingleProductComponent } from './products/single-product/single-product
 import { SingleUserComponent } from './users/single-user/single-user.component';
 import { CounterBtnComponent } from './products/counter/counter-btn/counter-btn.component';
 import { CounterComponent } from './products/counter/counter.component';
+import { FormsModule } from '@angular/forms';
+import { AddProductComponent } from './products/add-product/add-product.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,15 @@ import { CounterComponent } from './products/counter/counter.component';
       SingleProductComponent,
       SingleUserComponent,
       CounterBtnComponent,
-      CounterComponent
+      CounterComponent,
+      AddProductComponent,
+      AddUserComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+
 
   ],
   providers: [],

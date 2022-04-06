@@ -1,0 +1,33 @@
+<div class="container">
+  <form #form="ngForm">
+    <div class="mb-3">
+      <label for="title" class="form-label">First Name</label>
+      <input type="text" class="form-control" [(ngModel)]="myUser.name.firstname" name="firstname" required #firstname="ngModel">
+    </div>
+    <span *ngIf="!firstname.valid && firstname.touched " class="text-danger">
+      *First Name is required
+    </span>
+    <div class="mb-3">
+      <label for="lastname" class="form-label">Last Name</label>
+      <input type="text" class="form-control" [(ngModel)]="myUser.name.lastname" name="lastname" required #lastname="ngModel">
+    </div>
+    <span *ngIf="!lastname.valid && lastname.touched " class="text-danger">
+      *Last Name is required
+    </span>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" [(ngModel)]="myUser.email" name="description" required #email="ngModel">
+    </div>
+    <span *ngIf="!email.valid && email.touched " class="text-danger">
+      *Email is required
+    </span>
+   <div>
+    <button  class="btn btn-primary" [disabled]="form.invalid">
+      Add
+    </button>
+   </div>
+
+  </form>
+
+
+</div>

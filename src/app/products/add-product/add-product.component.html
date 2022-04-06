@@ -1,0 +1,33 @@
+<div class="container">
+  <form #form="ngForm">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" [(ngModel)]="myProduct.title" name="title" required #title="ngModel">
+    </div>
+    <span *ngIf="!title.valid && title.touched " class="text-danger">
+      *Title is required
+    </span>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input type="text" class="form-control" [(ngModel)]="myProduct.price" name="price" required #price="ngModel">
+    </div>
+    <span *ngIf="!price.valid && price.touched " class="text-danger">
+      *Price is required
+    </span>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" class="form-control" [(ngModel)]="myProduct.description" name="description" required #description="ngModel">
+    </div>
+    <span *ngIf="!description.valid && description.touched " class="text-danger">
+      *Price is required
+    </span>
+   <div>
+    <button  class="btn btn-primary" [disabled]="form.invalid">
+      Add
+    </button>
+   </div>
+
+  </form>
+
+
+</div>
